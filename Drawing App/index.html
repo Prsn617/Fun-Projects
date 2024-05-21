@@ -8,9 +8,97 @@
   </head>
   <body>
     <canvas id="myCanvas"></canvas>
-    <div>
-      <input type="range" id="brushSlider" value="1" min="1" max="10" />
-      <label>Brush Size</label>
+    <div class="sidebar">
+      <div class="colors">
+        <span>
+          <button
+            class="btn"
+            id="#f44336"
+            style="background-color: #f44336"
+          ></button>
+          <button
+            class="btn"
+            id="#4caf50"
+            style="background-color: #4caf50"
+          ></button>
+        </span>
+        <span>
+          <button
+            class="btn"
+            id="#e81e63"
+            style="background-color: #e81e63"
+          ></button>
+          <button
+            class="btn"
+            id="#8bc34a"
+            style="background-color: #8bc34a"
+          ></button>
+        </span>
+        <span>
+          <button
+            class="btn"
+            id="#9c27b0"
+            style="background-color: #9c27b0"
+          ></button>
+          <button
+            class="btn"
+            id="#ffeb3b"
+            style="background-color: #ffeb3b"
+          ></button>
+        </span>
+        <span>
+          <button
+            class="btn"
+            id="#3f51b5"
+            style="background-color: #3f51b5"
+          ></button>
+          <button
+            class="btn"
+            id="#ff8700"
+            style="background-color: #ff8700"
+          ></button>
+        </span>
+        <span>
+          <button
+            class="btn"
+            id="#2196f3"
+            style="background-color: #2196f3"
+          ></button>
+          <button
+            class="btn"
+            id="brown"
+            style="background-color: brown"
+          ></button>
+        </span>
+        <span>
+          <button
+            class="btn"
+            id="#00bcd4"
+            style="background-color: #00bcd4"
+          ></button>
+          <button class="btn" id="gray" style="background-color: gray"></button>
+        </span>
+        <span>
+          <button
+            class="btn"
+            id="white"
+            style="background-color: white"
+          ></button>
+          <button
+            class="btn"
+            id="black"
+            style="background-color: black"
+          ></button>
+        </span>
+      </div>
+      <span class="slider">
+        <input type="range" id="brushSlider" value="1" min="1" max="10" />
+        <label>Brush Size</label>
+      </span>
+      <button class="cls">Clear Screen 🚫</button>
+      <a id="downloadLnk" download="random.png"
+        ><button>Download as image ⬇</button></a
+      >
     </div>
     <script src="canvas.js"></script>
   </body>
