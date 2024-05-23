@@ -90,15 +90,18 @@
             style="background-color: black"
           ></button>
         </span>
+        <span class="picker">
+          <input type="color" id="colorPicker" value="#000000" />
+        </span>
       </div>
       <span class="slider">
         <input type="range" id="brushSlider" value="1" min="1" max="10" />
         <label>Brush Size</label>
       </span>
       <button class="cls">Clear Screen 🚫</button>
-      <a id="downloadLnk" download="random.png"
-        ><button>Download as image ⬇</button></a
-      >
+      <a id="downloadLnk" download="random.png">
+        <button>Download as image <b style="font-size: 18px">⬇</b></button>
+      </a>
     </div>
     <script src="canvas.js"></script>
   </body>

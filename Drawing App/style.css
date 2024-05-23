@@ -61,6 +61,11 @@ canvas,
   margin-bottom: -12px;
 }
 
+.picker {
+  display: flex;
+  align-items: center;
+}
+
 .cls,
 a button {
   padding: 0.5em 1em;

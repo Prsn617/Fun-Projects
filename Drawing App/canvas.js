@@ -8,6 +8,7 @@ const HEIGHT = canvas.height;
 const buttons = document.querySelectorAll(".btn");
 const clearScreen = document.querySelector(".cls");
 const downloadLnk = document.getElementById("downloadLnk");
+const colorPicker = document.getElementById("colorPicker");
 
 let c = canvas.getContext("2d");
 c.fillStyle = "#fff";
@@ -46,23 +47,23 @@ class Circle {
   }
 }
 
-clearScreen.addEventListener("click", () => {
-  c.clearRect(0, 0, WIDTH, HEIGHT);
-  c.beginPath();
-  console.log("Bruh");
-});
-
 downloadLnk.addEventListener("click", download, false);
 
 let circleList = [];
 
 function animate() {
   clearScreen.addEventListener("click", () => {
-    c.clearRect(0, 0, WIDTH, HEIGHT);
+    c.fillStyle = "white";
+    c.fillRect(0, 0, WIDTH, HEIGHT);
     circleList = [[]];
   });
   requestAnimationFrame(animate);
-  c.clearRect(0, 0, WIDTH, HEIGHT);
+  c.fillStyle = "white";
+  c.fillRect(0, 0, WIDTH, HEIGHT);
+
+  colorPicker.addEventListener("change", (e) => {
+    color = e.target.value;
+  });
 
   width = document.getElementById("brushSlider").value;
   for (let button of buttons) {
