@@ -10,25 +10,21 @@ let background = "#373A40";
 c.fillStyle = background;
 c.fillRect(0, 0, innerWidth, innerHeight);
 
-let r1 = document.getElementById("len1").value;
-let r2 = document.getElementById("len2").value;
-let m1 = document.getElementById("rad1").value;
-let m2 = document.getElementById("rad2").value;
-let a1_vel = document.getElementById("vel1").value / 100;
-let a2_vel = document.getElementById("vel2").value / 100;
+const vel1 = document.getElementById("vel1");
+const vel2 = document.getElementById("vel2");
 
 const x_pos = WIDTH / 2;
 const y_pos = 360;
-// let r1 = 150;
-// let r2 = 100;
-// let m1 = 10;
-// let m2 = 10;
+let r1;
+let r2;
+let m1;
+let m2;
+let a1_vel = document.getElementById("vel1").value / 1000;
+let a2_vel = document.getElementById("vel2").value / 1000;
 let a1 = Math.PI / 4;
 let a2 = Math.PI / 8;
-// let a1_vel = 0.012;
-// let a2_vel = 0.012;
 let coords = [];
-let g = 10 / 90;
+let g = 0.98;
 
 function drawCircle(x, y, r, clr) {
   c.beginPath();
@@ -49,6 +45,20 @@ function animate() {
   requestAnimationFrame(animate);
   c.fillStyle = background;
   c.fillRect(0, 0, innerWidth, innerHeight);
+
+  vel1.addEventListener("change", (e) => {
+    a1_vel = e.target.value / 1000;
+  });
+  vel2.addEventListener("change", (e) => {
+    a2_vel = e.target.value / 1000;
+  });
+
+  r1 = document.getElementById("len1").value;
+  r2 = document.getElementById("len2").value;
+  m1 = document.getElementById("rad1").value;
+  m2 = document.getElementById("rad2").value;
+  // a1_vel = document.getElementById("vel1").value / 100;
+  // a2_vel = document.getElementById("vel2").value / 100;
 
   let x1 = r1 * Math.sin(a1) + x_pos;
   let y1 = r1 * Math.cos(a1) + y_pos;
@@ -90,7 +100,7 @@ function animate() {
       coords[i][0],
       coords[i][1],
       2,
-      "#D1D8C5"
+      "#C0C7B4"
     );
   }
 }
